@@ -2,9 +2,11 @@
   margin: 0;
   padding: 0;
 }
+
 .header {
   font-size: 20px;
 }
+
 .nav {
   font-size: 20px;
   font-weight: bold;
@@ -20,13 +22,37 @@
   z-index: 1;
   padding: 20px;
   position: absolute;
-
 }
+
 .nav li {
   display: inline;
   min-width: 5em;
   margin: 0 2em;
 }
+
+.nav li button {
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav li button:hover {
+  animation-name: drawingLine;
+  animation-duration: 10s;
+  animation-delay: 0.1s;
+  animation-direction: reverse;
+  animation-timing-function: linear;
+}
+
+@keyframes drawingLine {
+  from {text-decoration: none;}
+  to {
+    text-decoration: underline;
+    text-decoration-color: lightblue;
+  }
+}
+
 .logoImg {
   float: left;
   width: 30px;
