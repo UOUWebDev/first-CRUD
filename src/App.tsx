@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState , useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Link } from "react-router-dom";
+
 
 function App() {
   return (
@@ -21,8 +23,17 @@ function App() {
         </ul>
       </div>
       <div className="main">
-        <div className="textBox"></div>
+        <div className="textBox">
+          <h2>text for test</h2>
+          <p>this is prototype of CRUD</p>
+        </div>
+        <div className="createBox">
+          <p className="createBox_img">
+            <a href="/pages/Post.tsx">+</a>
+          </p>
+        </div>
       </div>
+      <div className="footer"></div>
     </div>
   )
 };
