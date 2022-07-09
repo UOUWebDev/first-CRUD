@@ -80,3 +80,47 @@
   margin-right: 0px;
 }
 
+.App .main .textBox {
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.App .main .createBox {
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, 60%);
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.App .main .createBox .createBox_img {
+  font-size: 150px;
+  color: lightblue;
+  display: flex;
+  vertical-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.App .main .createBox .createBox_img a {
+  text-decoration: none;
+  color: lightblue;
+}
