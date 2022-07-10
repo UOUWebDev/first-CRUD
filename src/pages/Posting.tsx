@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
+import axios from 'axios';
 
 const Postbox = styled.div`
 background-color: white;
@@ -17,7 +18,7 @@ background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 `
 
-const PostTitle = styled.input`
+const Title = styled.input`
   display: flex;
     text-align: center;
     width: 90%;
@@ -27,7 +28,7 @@ const PostTitle = styled.input`
     margin-bottom: 20px;
 `
 
-const PostContent = styled.input`
+const Body = styled.input`
   display: flex;
     text-align: left;
     vertical-align: top;
@@ -44,11 +45,34 @@ const PostButton = styled.button`
 `
 
 function Post() {
+  const [title, setTitle] = useState('');
+  const [body, setBody] = useState('');
+
+  const titleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setTitle(event.target.value)
+  }
+  
+  const bodyChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setBody(event.target.value)
+  }
+
+  const postButton = () => {
+    console.log({title, body});
+    try {
+      axios.post('http://localhost:5000/posts', {
+        title,
+        body
+      }) 
+    } catch (error) {
+      console.error(error)
+    }
+  }
+  
   return (
     <Postbox>
-      <PostTitle></PostTitle>
-      <PostContent></PostContent>
-      <PostButton>작성</PostButton>
+      <Title value={title} onChange={titleChange} />
+      <Body value={body} onChange={bodyChange}/>
+      <PostButton onClick={postButton}>작성</PostButton>
     </Postbox>
   );
 }

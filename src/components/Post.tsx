@@ -31,7 +31,7 @@ export default function Post() {
     <div className="main">
       <Textbox>
         <h2>text for test</h2>
-        <p>this is prototype of CRUD</p>
+        <p>this is proctotype of CRUD</p>
         <Delete>삭제</Delete>
         <Revise>수정</Revise>
       </Textbox>
