@@ -1,11 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+const NavbarButton = styled.button`
+  display: block;
+  font-size: 20px;
+`
 
 export default function Header() {
   const handlerClick = () => alert("Not performed yet");
 
   return (
-    <div className="header">
+    <div>
         <ul className = "nav">
           <img 
           className = "logoImg"
@@ -16,6 +22,7 @@ export default function Header() {
           <li><button onClick = {handlerClick}>소통게시판</button></li>
           <li><button onClick = {handlerClick}>건의게시판</button></li>
           <li><button onClick = {handlerClick}>자유게시판</button></li>
+          <li><NavbarButton><Link to="/TestPage">Is this working?abcdefu</Link></NavbarButton></li>
           <ul className = "login">
             <li>로그인</li>
             <li>회원가입</li>
