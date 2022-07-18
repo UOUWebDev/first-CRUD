@@ -22,7 +22,7 @@ export default function Header() {
           <li><button onClick = {handlerClick}>소통게시판</button></li>
           <li><button onClick = {handlerClick}>건의게시판</button></li>
           <li><button onClick = {handlerClick}>자유게시판</button></li>
-          <li><NavbarButton><Link to="/TestPage">Is this working?abcdefu</Link></NavbarButton></li>
+          <li><NavbarButton>Is this working?abcdefu</NavbarButton></li>
           <ul className = "login">
             <li>로그인</li>
             <li>회원가입</li>
