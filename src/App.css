@@ -30,13 +30,6 @@
   margin: 0 2em;
 }
 
-.nav li button {
-  border: none;
-  background-color: transparent;
-  font-size: 20px;
-  font-weight: bold;
-}
-
 .nav li button:hover {
   animation-name: drawingLine;
   animation-duration: 10s;
@@ -67,7 +60,7 @@
   height: 30px;
 }
 
-.nav .login {
+.nav .login  {
   display: inline-block;
   font-size: 15px;
   text-align: center;

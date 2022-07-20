@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 const Postbox = styled.div`
 background-color: white;
@@ -72,7 +73,7 @@ function Post() {
     <Postbox>
       <Title value={title} onChange={titleChange} />
       <Body value={body} onChange={bodyChange}/>
-      <PostButton onClick={postButton}>작성</PostButton>
+      <PostButton onClick={postButton}><Link to="/">작성</Link></PostButton>
     </Postbox>
   );
 }
