@@ -1,8 +1,7 @@
-import React, {useState} from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Postbox = styled.div`
 background-color: white;
@@ -45,37 +44,42 @@ const PostButton = styled.button`
     float: right;
 `
 
-function Post() {
+export default function Post() {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
+
+  const navigate = useNavigate();
 
   const titleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(event.target.value)
   }
-  
+
   const bodyChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setBody(event.target.value)
   }
 
   const postButton = () => {
-    console.log({title, body});
     try {
       axios.post('http://localhost:5000/posts', {
         title,
         body
-      }) 
+      })
     } catch (error) {
       console.error(error)
     }
   }
-  
+
   return (
     <Postbox>
       <Title value={title} onChange={titleChange} />
-      <Body value={body} onChange={bodyChange}/>
-      <PostButton onClick={postButton}><Link to="/">작성</Link></PostButton>
+      <Body value={body} onChange={bodyChange} />
+      <PostButton onClick={() => {
+        navigate('/');
+        postButton();
+      }}>
+        작성
+      </PostButton>
     </Postbox>
   );
 }
 
-export default Post;

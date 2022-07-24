@@ -8,9 +8,6 @@ const NavbarButton = styled.button`
   font-size: 20px;
   font-weight: bold;
 `
-const NavbarLoginButton = styled.button`
-  
-`
 
 export default function Header() {
   
@@ -28,8 +25,8 @@ export default function Header() {
         <li><NavbarButton><Link to="/TestPage">자유게시판</Link></NavbarButton></li>
 
         <ul className="login">
-          <li><NavbarButton><Link to="/TestPage">로그인</Link></NavbarButton></li>
-          <li><NavbarButton><Link to="/TestPage">회원가입</Link></NavbarButton></li>
+          <li><NavbarButton><Link to="/LoginPage">로그인</Link></NavbarButton></li>
+          <li><NavbarButton><Link to="/LoginPage">회원가입</Link></NavbarButton></li>
         </ul>
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrOXw0W7pV-_uU38-iNJfaQbfDMJyu6c0--Q&usqp=CAU"
