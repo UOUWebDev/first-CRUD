@@ -1,13 +1,17 @@
-* {
-  margin: 0;
-  padding: 0;
-}
+import { createGlobalStyle } from "styled-components";
 
-.header {
-  font-size: 20px;
-}
+const GlobalStyle = createGlobalStyle`
 
-.nav {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .header {
+    font-size: 20px;
+  }
+
+  .nav {
   font-size: 20px;
   font-weight: bold;
   list-style-type: none;
@@ -22,53 +26,56 @@
   z-index: 1;
   padding: 20px;
   position: absolute;
-}
+  }
 
-.nav li {
+  .nav li {
   display: inline;
   min-width: 5em;
   margin: 0 2em;
-}
+  }
 
-.nav li button:hover {
+  .nav li button:hover {
   animation-name: drawingLine;
   animation-duration: 10s;
   animation-delay: 0.1s;
   animation-direction: reverse;
   animation-timing-function: linear;
-}
+  }
 
-@keyframes drawingLine {
+  @keyframes drawingLine {
   from {text-decoration: none;}
   to {
     text-decoration: underline;
     text-decoration-color: lightblue;
+    }
   }
-}
 
-.logoImg {
+  .logoImg {
   float: left;
   width: 30px;
   height: 30px;
   transform: rotate(90deg);
-}
+  }
 
-.nav .menuLogo {
+  .nav .menuLogo {
   font-size: 25px;
   float: right;
   width: 40px;
   height: 30px;
-}
+  }
 
-.nav .login  {
+  .nav .login  {
   display: inline-block;
   font-size: 15px;
   text-align: center;
   margin-left: 10%;
   padding: 0px;
-}
+  }
 
-.nav .login li {
+  .nav .login li {
   display: inline;
   margin-right: 0px;
-}
+  }
+`
+
+export default GlobalStyle;

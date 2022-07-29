@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import GlobalStyle from "../components/globalStyle";
 
 const LoginBox = styled.div`
 display: flex;
@@ -63,6 +64,7 @@ export default function LoginPage() {
 
     return (
         <LoginBox>
+            <GlobalStyle />
             ID: <InputID value={inputID} onChange={idChange} />
             PW: <InputPassword value={inputPassword} onChange={passwordChange} />
             <LoginButton onClick={() => {
