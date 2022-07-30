@@ -21,11 +21,10 @@ const GlobalStyle = createGlobalStyle`
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1;
   background-color: white;
   border: 1px solid black;
-  z-index: 1;
   padding: 20px;
-  position: absolute;
   }
 
   .nav li {
@@ -76,6 +75,6 @@ const GlobalStyle = createGlobalStyle`
   display: inline;
   margin-right: 0px;
   }
-`
+`;
 
 export default GlobalStyle;

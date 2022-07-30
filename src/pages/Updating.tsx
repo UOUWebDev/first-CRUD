@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import GlobalStyle from "../components/globalStyle";
 
 const Postbox = styled.div`
@@ -45,11 +45,23 @@ const PostButton = styled.button`
   float: right;
 `;
 
-export default function Post() {
-  const [title, setTitle] = useState("");
-  const [body, setBody] = useState("");
+export default function Updating() {
+  const [title, setTitle] = useState<string>("");
+  const [body, setBody] = useState<string>("");
 
   const navigate = useNavigate();
+  let { id } = useParams();
+  console.log(id);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/post/${id}`)
+      .then((res) => {
+        setTitle(res?.data.title);
+        setBody(res?.data.body);
+      })
+      .catch((err) => console.log(err));
+  }, [id]);
 
   const titleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(event.target.value);
@@ -59,9 +71,9 @@ export default function Post() {
     setBody(event.target.value);
   };
 
-  const postButton = () => {
+  const updateButton = () => {
     try {
-      axios.post("http://localhost:5000/post", {
+      axios.patch(`http://localhost:5000/post/${id}`, {
         title,
         body,
       });
@@ -78,10 +90,10 @@ export default function Post() {
       <PostButton
         onClick={() => {
           navigate("/");
-          postButton();
+          updateButton();
         }}
       >
-        작성
+        수정
       </PostButton>
     </Postbox>
   );

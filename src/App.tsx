@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Main from './pages/Main';
-import Posting from './pages/Posting';
-import TestPage from './pages/TestPage';
-import LoginPage from './pages/LoginPage';
-import Header from './components/Header';
+import Main from "./pages/Main";
+import Posting from "./pages/Posting";
+import Updating from "./pages/Updating";
+import LoginPage from "./pages/LoginPage";
+import Header from "./components/Header";
 import GlobalStyle from "./components/globalStyle";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/posting" element={<Posting />} />
-          <Route path="/testpage" element={<TestPage />} />
+          <Route path="/updating/:id" element={<Updating />} />
           <Route path="/loginpage" element={<LoginPage />} />
         </Routes>
       </BrowserRouter>
