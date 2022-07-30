@@ -6,13 +6,9 @@ const CreateBox = styled.div`
   display: flex;
   background-color: white;
   padding: 20px;
-  margin: 20px;
+  margin: 40px auto;
   width: 50%;
-  height: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%; 
-  transform: translate(-50%, 60%);
+  height: 15%;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   justify-content: center;
@@ -29,7 +25,9 @@ const CreateBoxImg = styled.button`
 export default function CreatePost() {
   return (
     <CreateBox>
-      <CreateBoxImg><Link to="/Posting">+</Link></CreateBoxImg>
+      <CreateBoxImg>
+        <Link to="/Posting">+</Link>
+      </CreateBoxImg>
     </CreateBox>
   );
 }
