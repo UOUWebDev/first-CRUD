@@ -32,6 +32,10 @@ const MenuBar = createGlobalStyle`
       color: black;
       }
 
+      :hover {
+        background-color: #f2f2f2;
+      }
+
     }
 
   .logoImg {
