@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Post from "../components/Post";
 import CreatePost from "../components/CreatePost";
-import GlobalStyle from "../components/globalStyle";
+import MenuBar from "../components/menuBar";
 import axios from "axios";
 
 interface dataType {
@@ -27,7 +27,7 @@ export default function Main() {
 
   return (
     <>
-      <GlobalStyle />
+      <MenuBar />
       {dataArray.map((data) => (
         <Post data={data} key={data._id} />
       ))}
