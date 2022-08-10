@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import GlobalStyle from "../components/globalStyle";
+import MenuBar from "../components/menuBar";
 
 const Postbox = styled.div`
   background-color: white;
@@ -72,7 +72,7 @@ export default function Post() {
 
   return (
     <Postbox>
-      <GlobalStyle />
+      <MenuBar />
       <Title value={title} onChange={titleChange} />
       <Body value={body} onChange={bodyChange} />
       <PostButton

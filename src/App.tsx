@@ -4,7 +4,7 @@ import Posting from "./pages/Posting";
 import Updating from "./pages/Updating";
 import LoginPage from "./pages/LoginPage";
 import Header from "./components/Header";
-import GlobalStyle from "./components/globalStyle";
+import GlobalStyle from "./components/menuBar";
 
 function App() {
   return (
