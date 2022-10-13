@@ -52,7 +52,7 @@ export default function LoginPage() {
     const loginButton = () => {
         console.log({ inputID, inputPassword });
         try {
-            axios.post('http://localhost:5000/posts', {
+            axios.post('http://localhost:4000/posts', {
                 inputID,
                 inputPassword
             })

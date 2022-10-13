@@ -39,7 +39,7 @@ export default function Post({ data }: prosType) {
   const navigate = useNavigate();
   const handleClickDelete = () => {
     axios
-      .delete(`http://localhost:5000/post/${data?._id}`)
+      .delete(`http://localhost:4000/post/${data?._id}`)
       .then((res) => {
         console.log(res.data);
       })

@@ -55,7 +55,7 @@ export default function Updating() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/post/${id}`)
+      .get(`http://localhost:4000/post/${id}`)
       .then((res) => {
         setTitle(res?.data.title);
         setBody(res?.data.body);
@@ -73,7 +73,7 @@ export default function Updating() {
 
   const updateButton = () => {
     try {
-      axios.patch(`http://localhost:5000/post/${id}`, {
+      axios.patch(`http://localhost:4000/post/${id}`, {
         title,
         body,
       });

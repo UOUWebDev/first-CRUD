@@ -61,7 +61,7 @@ export default function Post() {
 
   const postButton = () => {
     try {
-      axios.post("http://localhost:5000/post", {
+      axios.post("http://localhost:4000/post", {
         title,
         body,
       });

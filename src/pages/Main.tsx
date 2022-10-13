@@ -17,7 +17,7 @@ export default function Main() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/post")
+      .get("http://localhost:4000/post")
       .then((res) => {
         setDataArray(res.data);
       })
